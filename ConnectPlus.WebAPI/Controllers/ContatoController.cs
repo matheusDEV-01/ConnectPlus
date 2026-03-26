@@ -94,19 +94,54 @@ public class ContatoController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public IActionResult Atualizar(Guid id, ContatoDTO contato)
+    public async Task<IActionResult> Put(Guid id, ContatoDTO contatoAtualizado)
     {
+        var contatoBuscado = _contatoRepository.BuscarPorId(id);
+
+        if (contatoBuscado == null)
+            return NotFound("Contato não encontrado");
+
+        //Atualiza dados básicos
+        contatoBuscado.Nome = contatoAtualizado.Nome;
+        contatoBuscado.Formadecontato = contatoAtualizado.Formadecontato;
+        contatoBuscado.IdTipoDeContato = contatoAtualizado.IdTipoDeContato;
+
+        //Upload de imagem
+        if (contatoAtualizado.Imagem != null && contatoAtualizado.Imagem.Length > 0)
+        {
+            var pastaRelativa = "wwwroot/imagens";
+            var caminhoPasta = Path.Combine(Directory.GetCurrentDirectory(), pastaRelativa);
+
+            //Deleta imagem antiga
+            if (!string.IsNullOrEmpty(contatoBuscado.Imagem))
+            {
+                var caminhoAntigo = Path.Combine(caminhoPasta, contatoBuscado.Imagem);
+
+                if (System.IO.File.Exists(caminhoAntigo))
+                    System.IO.File.Delete(caminhoAntigo);
+            }
+
+            //Salva nova imagem
+            var extensao = Path.GetExtension(contatoAtualizado.Imagem.FileName);
+            var nomeArquivo = $"{Guid.NewGuid()}{extensao}";
+
+            if (!Directory.Exists(caminhoPasta))
+                Directory.CreateDirectory(caminhoPasta);
+
+            var caminhoCompleto = Path.Combine(caminhoPasta, nomeArquivo);
+
+            using (var stream = new FileStream(caminhoCompleto, FileMode.Create))
+            {
+                await contatoAtualizado.Imagem.CopyToAsync(stream);
+            }
+
+            contatoBuscado.Imagem = nomeArquivo;
+        }
+
         try
         {
-            var contatoAtualizado = new Contato
-            {
-                Nome = contato.Nome,
-                Formadecontato = contato.Formadecontato,
-                IdTipoDeContato = contato.IdTipoDeContato,
-                Tipodecontato = contato.Tipodecontato
-            };
-            _contatoRepository.Atualizar(id, contatoAtualizado);
-            return NoContent();  // Retorna status code 204 para indicar que a operação foi bem-sucedida, mas não há conteúdo para retornar
+            _contatoRepository.Atualizar(id, contatoBuscado);
+            return NoContent();
         }
         catch (Exception erro)
         {

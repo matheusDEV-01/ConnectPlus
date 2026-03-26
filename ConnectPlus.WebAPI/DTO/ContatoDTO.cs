@@ -2,6 +2,8 @@
 
 public class ContatoDTO
 {
+    public Guid IdContato { get; set; }
+
     public string Nome { get; set; } = null!;
     public string Formadecontato { get; set; } = null!;
     public IFormFile? Imagem { get; set; }
