@@ -18,6 +18,11 @@
     "Order": 0,
     "Parameters": [
       {
+        "Name": "IdContato",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
         "Name": "Nome",
         "Type": "System.String",
         "IsRequired": false
@@ -63,7 +68,7 @@
   },
   {
     "ContainingType": "ConnectPlus.WebAPI.Controllers.ContatoController",
-    "Method": "Atualizar",
+    "Method": "Put",
     "RelativePath": "api/Contato/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -73,6 +78,11 @@
         "Name": "id",
         "Type": "System.Guid",
         "IsRequired": true
+      },
+      {
+        "Name": "IdContato",
+        "Type": "System.Guid",
+        "IsRequired": false
       },
       {
         "Name": "Nome",

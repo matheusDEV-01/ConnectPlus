@@ -32,6 +32,14 @@
         ],
         "parameters": [
           {
+            "name": "IdContato",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
             "name": "Nome",
             "in": "query",
             "schema": {
@@ -119,6 +127,14 @@
             "name": "id",
             "in": "path",
             "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "IdContato",
+            "in": "query",
             "schema": {
               "type": "string",
               "format": "uuid"

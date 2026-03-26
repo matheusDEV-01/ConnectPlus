@@ -104,6 +104,7 @@ public class ContatoController : ControllerBase
         //Atualiza dados básicos
         contatoBuscado.Nome = contatoAtualizado.Nome;
         contatoBuscado.Formadecontato = contatoAtualizado.Formadecontato;
+        contatoBuscado.Tipodecontato = contatoAtualizado.Tipodecontato;
         contatoBuscado.IdTipoDeContato = contatoAtualizado.IdTipoDeContato;
 
         //Upload de imagem
