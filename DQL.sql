@@ -16,3 +16,6 @@ tipodecontato VARCHAR(256) UNIQUE NOT NULL,
 IdTipoDeContato UNIQUEIDENTIFIER FOREIGN KEY REFERENCES TipoDeContato(TipoDeContatoID)
 );
 GO
+
+
+select * from Contato;

@@ -33,7 +33,8 @@ public class ContatoRepository : IContatoRepository
 
     public Contato BuscarPorId(Guid id)
     {
-        return _context.Contatos.Include(Contato => Contato.IdTipoDeContatoNavigation).FirstOrDefault(Contato => Contato.IdContato == id)!;
+        return _context.Contatos.Include(Contato => Contato.IdTipoDeContatoNavigation)
+            .FirstOrDefault(Contato => Contato.IdContato == id)!;
     }
 
     public void Cadastrar(Contato NovoContato)
@@ -53,14 +54,13 @@ public class ContatoRepository : IContatoRepository
         }
     }
 
-    public List<Contato> Listar()
+  
+       public List<Contato> Listar()
     {
-
-        return _context.Contatos.Include(e => e.IdTipoDeContatoNavigation)
-                .Include(e => e.IdTipoDeContatoNavigation).ToList();
-
-
+        return _context.Contatos
+            .Include(e => e.IdTipoDeContatoNavigation).ToList();
     }
-    
 }
+
+
 

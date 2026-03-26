@@ -156,3 +156,11 @@ C:\Users\54590704811\Desktop\ConnectPlus\ConnectPlus.WebAPI\obj\Debug\net10.0\re
 C:\Users\54590704811\Desktop\ConnectPlus\ConnectPlus.WebAPI\obj\Debug\net10.0\ConnectPlus.WebAPI.pdb
 C:\Users\54590704811\Desktop\ConnectPlus\ConnectPlus.WebAPI\obj\Debug\net10.0\ConnectPlus.WebAPI.genruntimeconfig.cache
 C:\Users\54590704811\Desktop\ConnectPlus\ConnectPlus.WebAPI\obj\Debug\net10.0\ref\ConnectPlus.WebAPI.dll
+C:\Users\54590704811\Desktop\ConnectPlus\ConnectPlus.WebAPI\obj\Debug\net10.0\ConnectPlus.WebAPI.sourcelink.json
+C:\Users\54590704811\Desktop\ConnectPlus\ConnectPlus.WebAPI\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\54590704811\Desktop\ConnectPlus\ConnectPlus.WebAPI\bin\Debug\net10.0\Microsoft.OpenApi.dll
+C:\Users\54590704811\Desktop\ConnectPlus\ConnectPlus.WebAPI\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\54590704811\Desktop\ConnectPlus\ConnectPlus.WebAPI\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\54590704811\Desktop\ConnectPlus\ConnectPlus.WebAPI\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\54590704811\Desktop\ConnectPlus\ConnectPlus.WebAPI\obj\Debug\net10.0\ConnectPlus.WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\54590704811\Desktop\ConnectPlus\ConnectPlus.WebAPI\bin\Debug\net10.0\ConnectPlus.WebAPI.staticwebassets.runtime.json
